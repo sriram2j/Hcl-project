@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel = "stylesheet" href = "style.css" type = text/css>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class = "navbar">
+      <span class = "title" ><svg width = "24" height = "24" xmlns="http://www.w3.org/2000/svg"><image href = "icon.png" width = "24" height = "24" /></svg>easumes</span>
+        <span class = "navtitles"><a href="about.html" style = "text-decoration: none; color:white;">| About |</a>
+        <a href = "home.html" style = "text-decoration: none; color:white;"> Home</a></span>
+
+    </div>
+    <div class = "whitespace"></div>
+    <div class = "leftside">
+        <div class = "inputbox">
+            <form>
+              <h2>Personal Information</h2><br>
+              <span class = "col-4">
+                <label class = "label">First Name</label>
+                <label class = "tolabel">Last Name</label><br>
+                <input type = "text"  class = "box" placeholder="joe" id = "fname">
+                <input type = "text" class = "tobox" placeholder = "bro" id = "lname">
+                <label class = "label">Phone Num</label>
+                <label class = "tolabel">Email Id</label><br>
+                <input type = "text"  class = "box" placeholder="9876543210" id = "mobile">
+                <input type = "email" class = "tobox" placeholder = "hi@mail" id = "mail"><br>
+                <label class = "label">Birth Date</label><br>
+                <input type = "date" class = "box" placeholder = "" id="dob">
+              </span>
+              <h2>About you</h2><br>
+              <span>
+                <label class = "label">You Domain</label>
+                <label class = "tolabel">Job Designation</label><br>
+                <input type = "text"  class = "box" placeholder="Computer Science">
+                <input type = "text"  class = "tobox" placeholder="joe" id = "designation">
+                <label class = "label">Describe you</label><br>
+                <textarea style = "width:65%" placeholder="im a fastlearner" id = "describe"></textarea>
+              </span>
+              
+                <h2 style = "margin-top:5%">Education</h2><br>
+              <span>
+                <label class = "label">School Name</label>
+                <label class = "tolabel">College Name</label><br>
+                <input type = "text" class = "box" placeholder = "sample school" id = "school">
+                <input type = "text" class = "tobox" placeholder = "sam college" id = "college"><br>
+                <label class = "label">Current Cgpa</label><br>
+                <input type = "number" class = "box" placeholder = "7.8" id = "cgpa">
+              </span>
+                <h2>Projects</h2><br>
+              <span id = "project">
+                <label class = "label">Projects Done by you</label><br>
+                <textarea placeholder="tell about your project" style = "width:65%;" id = "proj"></textarea>
+                <button class = "button" onclick="addproject(event)">+</button>
+              </span>
+                <h2>Skills</h2><br>
+              <span id = "skill">
+                <label class = "label">Enter skills</label><br>
+                <input class = "box"  type = "text" placeholder="Eating" id = "skills">
+                <button onclick="addskill(event)">+</button>
+              </span>
+                <h2>Intrests</h2><br>
+                <span>
+                    <label class = "label">Enter your intrests</label><br>
+                    <input class = "box" type = "text" placeholder = "eating" id = "intrests">
+                </span>
+            </form>
+        </div>
+    </div>
+    <div class = "rightside">
+        
+<div class = "complete" id = "cv-preview">
+  <div class="container">
+    <div class="header">
+      <div class="full-name" id = "nameholder">
+        <span class="first-name">John</span> 
+        <span class="last-name">Doe</span>
+      </div>
+      <div class="contact-info">
+        <span class="email" >Email: </span>
+        <span class="email-val" id = "mailholder">john.doe@gmail.com</span>
+        <span class="separator"></span>
+        <span class="phone">Phone: </span>
+        <span class="phone-val" id = "mobileholder">111-222-3333</span><br>
+        
+        <span class="phone">DOB: </span>
+        <span class="phone-val" id = "dobholder">20-jan-2004</span>
+      </div>
+      
+      <div class="about">
+        <span class="position" id = "positionholder">Front-End Developer </span>
+        <span class="desc" id="aboutholder">
+          I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. 
+        </span>
+      </div>
+    </div>
+     <div class="details">
+      <div class="section">
+        <div class="section__title">Education</div>
+        <div class="section__list">
+          <div class="section__list-item">
+            <div class="left">
+              <div class="name" id = "schoolholder">Sparrow school</div>
+              <div class="addr"></div>
+              <div class="duration"></div>
+            </div>
+            <div class="right">
+              <div class="name" id = "collegeholder">Jack College</div>
+              <div class="desc"></div>
+            </div>
+          </div>
+                  <div class="section__list-item">
+            <div class="left">
+              <div class="name">Current CGPA</div>
+              <div class="addr" id = "cgpaholder">8.5</div>
+              <div class="duration"></div>
+            </div>
+            <div class="right">
+              <div class="name"></div>
+              <div class="desc"></div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      
+        </div>
+        
+    </div><br>
+       <div class="section">
+        <div class="section__title" style = "color:#54AFE4;font-weight:bold;letter-spacing: 2px;text-transform: uppercase;">Projects</div> 
+         <div class="section__list">
+           <div class="section__list-item">
+             <div class="name">DSP</div>
+             <div class="text" id = "projholder">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow.</div>
+           </div>
+           
+           <div class="section__list-item">
+                      <div class="name">DSP</div>
+             <div class="text">I am a front-end developer with more than 3 years of experience writing html, css, and js. I'm motivated, result-focused and seeking a successful team-oriented company with opportunity to grow. <a href="/login">link</a>
+             </div>
+           </div>
+         </div>
+      </div><br>
+       <div class="section">
+         <div class="section__title"style = "color:#54AFE4;font-weight:bold;letter-spacing: 2px;text-transform: uppercase;">Skills</div>
+         <div class="skills">
+           <div class="skills__item">
+             <div class="left"><div class="name" id = "skillholder">
+               Javascript
+               </div></div>
+             <div class="right">
+                            <input  id="ck1" type="checkbox" checked/>
+  
+               <label for="ck1"></label>
+                            <input id="ck2" type="checkbox" checked/>
+  
+                <label for="ck2"></label>
+                           <input id="ck3" type="checkbox" />
+  
+                <label for="ck3"></label>
+                             <input id="ck4" type="checkbox" />
+              <label for="ck4"></label>
+                            <input id="ck5" type="checkbox" />
+                <label for="ck5"></label>
+  
+             </div>
+           </div>
+           
+         </div>
+         <div class="skills__item">
+             <div class="left"><div class="name" id = "skillholder1">
+               CSS</div></div>
+             <div class="right">
+                            <input  id="ck6" type="checkbox" checked/>
+  
+               <label for="ck1"></label>
+                            <input id="ck7" type="checkbox" checked/>
+  
+                <label for="ck2"></label>
+                           <input id="ck8" type="checkbox" />
+  
+                <label for="ck3"></label>
+                             <input id="ck9" type="checkbox" />
+              <label for="ck4"></label>
+                            <input id="ck10" type="checkbox" />
+                <label for="ck5"></label>
+  
+             </div>
+           </div>
+           
+         </div><br>
+       <div class="section">
+       <div class="section__title" style = "color:#54AFE4;font-weight:bold;letter-spacing: 2px;text-transform: uppercase;">
+         Interests
+         </div>
+         <div class="section__list">
+           <div class="section__list-item" id = "intrestholder">
+                    Football, programming.
+            </div>
+         </div>
+       </div>
+       </div>
+    </div>
+  </div>
+  <br>
+  <centre><br><button onclick="convertToPDF()" class = "pdfbut">Convert to PDF</button></centre>
+  <br><button id="captureButton">Capture and Save</button>
+
+    </div>
+  </div>
+</div>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+    <script src = "script.js"></script>
+</body>
+</html>

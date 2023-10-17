@@ -128,36 +128,9 @@ function previewImage(input) {
         reader.readAsDataURL(file);
     }
 }
-function convertToPDF() {
-    const element = document.getElementById('cv-preview'); // Replace 'cv-preview' with the ID of your CV preview section
-console.log("bitton clicked");
-    const opt = {
-        margin: 10,
-        filename: 'user_cv.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-    };
-
-    html2pdf()
-        .from(element)
-        .set(opt)
-        .outputPdf();
-}
-window.addEventListener("load", function() {
-
-function captureAndSave() {
-    html2canvas(document.querySelector("#capture")).then(function(canvas) {
-        console.log("hi");
-      // Convert canvas to image and trigger download
-      const image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-      const a = document.createElement("a");
-      a.href = image;
-      a.download = "screenshot.png";
-      a.click();
+document.getElementById("printButton").addEventListener("click", function() {
+    printJS({
+      printable: "cv-preview", // Replace with the ID of the element you want to print
+      type: "html",
     });
-  }
-});
-
-
-  
+  });
